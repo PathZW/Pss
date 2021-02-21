@@ -1,0 +1,112 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><title>获取通达源类型</title>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<STYLE>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.19597"></HEAD>
+<body>
+<DIV align=left>
+<TABLE class=MsoNormalTable 
+style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: 408.7pt; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: medium none; MARGIN: auto auto auto 33.35pt; BORDER-LEFT: medium none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 width=545 border=1>
+  
+  <TR style="HEIGHT: 16.05pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes"   >
+    <TD     style="BORDER-TOP: windowtext 1pt solid; HEIGHT: 16.05pt; BORDER-RIGHT: windowtext 1pt solid; WIDTH: 408.7pt; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BACKGROUND-COLOR: transparent; mso-border-alt: solid windowtext .5pt"     vAlign=top width=545>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >int PSS_CSX00_ScpiGetSourceType(int devID, uchar ch, 
+      bool* isVSrc,<o:p></o:p></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 198pt; mso-char-indent-count: 16.5" 
+      ><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >uint timeout)<o:p 
+      ></o:p></SPAN></P></TD></TR>
+  <TR style="HEIGHT: 16.05pt; mso-yfti-irow: 1; mso-yfti-lastrow: yes"   >
+    <TD     style="BORDER-TOP: #f0f0f0; HEIGHT: 16.05pt; BORDER-RIGHT: windowtext 1pt solid; WIDTH: 408.7pt; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BACKGROUND-COLOR: transparent; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt"     vAlign=top width=545>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >函数名</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：<SPAN lang=EN-US 
+      >PSS_CSX00_ScpiGetSourceType<o:p 
+      ></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >功<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>能：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >获取指定通道当前源类型<SPAN lang=EN-US><o:p 
+      ></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >参<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>数：</SPAN></B><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >devID</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输入参数：通信<SPAN lang=EN-US 
+      >API</SPAN>返回成功的设备<SPAN lang=EN-US 
+      >ID</SPAN>号<SPAN lang=EN-US><o:p 
+      ></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      ><SPAN style="mso-spacerun: yes" 
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>ch</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+      </SPAN></SPAN>输入参数：指定通道号（必须为合法通道号：详见备注）<SPAN lang=EN-US 
+      ><o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      ><SPAN style="mso-spacerun: yes" 
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>isVSrc</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输出参数：是否为电压源，<SPAN lang=EN-US 
+      >false</SPAN>表示为电流源<SPAN lang=EN-US 
+      ><o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      ><SPAN style="mso-spacerun: yes" 
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>timeout</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输入参数：等待超时时间<SPAN lang=EN-US 
+      >(ms)<o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >返回值：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >函数成功执行返回<SPAN lang=EN-US 
+      >0</SPAN>，失败返回非<SPAN lang=EN-US 
+      >0</SPAN>值<SPAN lang=EN-US><o:p 
+      ></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >备<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>注：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >无<SPAN lang=EN-US><o:p 
+      ></o:p></SPAN></SPAN></P></TD></TR></TABLE></DIV></BODY></HTML>
