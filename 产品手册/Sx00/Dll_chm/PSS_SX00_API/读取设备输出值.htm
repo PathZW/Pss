@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><title>读取设备输出值</title>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<STYLE>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.19597"></HEAD>
+<body>
+<P>
+<TABLE class=MsoNormalTable 
+style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: medium none; MARGIN: auto auto auto 6.85pt; BORDER-LEFT: medium none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  
+  <TR style="HEIGHT: 19.9pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes"   >
+    <TD     style="BORDER-TOP: windowtext 1pt solid; HEIGHT: 19.9pt; BORDER-RIGHT: windowtext 1pt solid; WIDTH: 395.35pt; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BACKGROUND-COLOR: transparent; mso-border-alt: solid windowtext .5pt"     vAlign=top width=527>
+      <P class=MsoNormal 
+      style="MARGIN: 0cm 0cm 0pt 168pt; TEXT-INDENT: -168pt; mso-char-indent-count: -14.0" 
+      ><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >int PSS_SX00_GetOutputValue(int devID, double* vVal, 
+      double* iVal, uint timeout)<o:p 
+  ></O:P></SPAN></P></TD></TR>
+  <TR style="HEIGHT: 19.9pt; mso-yfti-irow: 1; mso-yfti-lastrow: yes"   >
+    <TD     style="BORDER-TOP: #f0f0f0; HEIGHT: 19.9pt; BORDER-RIGHT: windowtext 1pt solid; WIDTH: 395.35pt; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BACKGROUND-COLOR: transparent; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt"     vAlign=top width=527>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >函数名</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：<SPAN lang=EN-US 
+      >PSS_SX00_GetOutputValue<o:p 
+      ></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >功<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>能：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >获取设备输出电压电流值<SPAN lang=EN-US><o:p 
+      ></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >参<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>数：</SPAN></B><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >devID</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输入参数：通信<SPAN lang=EN-US 
+      >API</SPAN>返回成功的设备<SPAN lang=EN-US 
+      >ID</SPAN>号<SPAN lang=EN-US><o:p 
+      ></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN: 0cm 0cm 0pt 155.9pt; TEXT-INDENT: -108pt; mso-char-indent-count: -9.0; mso-para-margin-left: 4.56gd" 
+      ><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >vVal</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输出参数：设备输出电压值<SPAN lang=EN-US 
+      ><o:p></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN: 0cm 0cm 0pt 155.9pt; TEXT-INDENT: -108pt; mso-char-indent-count: -9.0; mso-para-margin-left: 4.56gd" 
+      ><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >iVal</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输出参数：设备输出电流值<SPAN lang=EN-US 
+      ><o:p></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN: 0cm 0cm 0pt 155.9pt; TEXT-INDENT: -108pt; mso-char-indent-count: -9.0; mso-para-margin-left: 4.56gd" 
+      ><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >timeout</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >：输入参数：等待超时时间<SPAN lang=EN-US 
+      >(ms)<o:p></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >返回值：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >函数成功执行返回<SPAN lang=EN-US 
+      >0</SPAN>，失败返回非<SPAN lang=EN-US 
+      >0</SPAN>值<SPAN lang=EN-US><o:p 
+      ></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >备<SPAN lang=EN-US><SPAN 
+      style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>注：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体" 
+      >无<SPAN lang=EN-US><o:p 
+      ></O:P></SPAN></SPAN></P></TD></TR></TABLE></P></BODY></HTML>
