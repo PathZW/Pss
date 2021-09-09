@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><title>设置通道NPLC值</title>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<STYLE>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.19597"></HEAD>
+<body>
+<DIV align=left>
+<TABLE class=MsoNormalTable 
+style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: 408.7pt; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: medium none; MARGIN: auto auto auto 33.35pt; BORDER-LEFT: medium none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 width=545 border=1>
+  
+  <TR style="HEIGHT: 16.05pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+    <TD     style="BORDER-TOP: windowtext 1pt solid; HEIGHT: 16.05pt; BORDER-RIGHT: windowtext 1pt solid; WIDTH: 408.7pt; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BACKGROUND-COLOR: transparent; mso-border-alt: solid windowtext .5pt"     vAlign=top width=545>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">int 
+      PSS_CSX00_ScpiSetNPLC(int devID, uchar ch, bool isV, double 
+      nplc)<?xml:namespace prefix = "o" ns = 
+      "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P></TD></TR>
+  <TR style="HEIGHT: 16.05pt; mso-yfti-irow: 1; mso-yfti-lastrow: yes">
+    <TD     style="BORDER-TOP: #f0f0f0; HEIGHT: 16.05pt; BORDER-RIGHT: windowtext 1pt solid; WIDTH: 408.7pt; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BACKGROUND-COLOR: transparent; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt"     vAlign=top width=545>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">函数名</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">：<SPAN 
+      lang=EN-US>PSS_CSX00_ScpiSetNPLC<o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">功<SPAN 
+      lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>能：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">设置指定通道设备<SPAN 
+      lang=EN-US>NPLC<o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">参<SPAN 
+      lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>数：</SPAN></B><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">devID</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">：输入参数：通信<SPAN 
+      lang=EN-US>API</SPAN>返回成功的设备<SPAN lang=EN-US>ID</SPAN>号<SPAN 
+      lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>ch</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">：<SPAN 
+      lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+      </SPAN></SPAN>输入参数：指定通道号（必须为合法通道号：详见备注）<SPAN 
+      lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>isV</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">：输入参数：是否设置电压<SPAN 
+      lang=EN-US>NPLC</SPAN>，<SPAN lang=EN-US>false</SPAN>表示设置电流<SPAN 
+      lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN: 0cm 0cm 0pt 155.9pt; TEXT-INDENT: -108pt; mso-char-indent-count: -9.0; mso-para-margin-left: 4.56gd"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">nplc</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">：输入参数：<SPAN 
+      lang=EN-US>nplc</SPAN>取值为<SPAN 
+      lang=EN-US>0.01-10<o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">返回值：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">函数成功执行返回<SPAN 
+      lang=EN-US>0</SPAN>，失败返回非<SPAN lang=EN-US>0</SPAN>值<SPAN 
+      lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B 
+      style="mso-bidi-font-weight: normal"><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">备<SPAN 
+      lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; 
+      </SPAN></SPAN>注：</SPAN></B><SPAN 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-bidi-font-family: 宋体">无<SPAN 
+      lang=EN-US><o:p></o:p></SPAN></SPAN></P></TD></TR></TABLE></DIV></BODY></HTML>
