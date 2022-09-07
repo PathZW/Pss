@@ -1,0 +1,12 @@
+### Projects ###
+
+## Office Word/Excel ##
+**/~$*
+
+## C/C++ ##
+**/*.exe
+**/*.o
+**/*.lib
+**/*.obj
+**/*.dll
+**/cscope.*
