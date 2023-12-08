@@ -1,0 +1,4 @@
+load STM32F407ZETx 
+project name STCubeGenerated 
+project toolchain "MDK-ARM V5" 
+project path "D:\Data\PSS_COC-III\BI_COCBurnIn_1\PSS_COCBI4012_CC_DS_MC_V1.0.0\Project\_MDK\RTE\Device\STM32F407ZETx\" 

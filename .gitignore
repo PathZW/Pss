@@ -1,0 +1,197 @@
+###############################################################################
+###############################################################################
+
+# Created by https://www.gitignore.io/api/c,c++,keil,windows,slickedit
+# Edit at https://www.gitignore.io/?templates=c,c++,keil,windows,slickedit
+
+###############################################################################
+### C ###
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+###############################################################################
+### C++ ###
+# Prerequisites
+
+# Compiled Object files
+*.slo
+
+# Precompiled Headers
+
+# Compiled Dynamic libraries
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+
+# Executables
+
+###############################################################################
+### Keil ###
+# something maybe need to add
+# *.bat  # generate batch file
+# output/project_name # uv project generate without file ext
+# *.SRC # generate source file
+# *.src
+
+# Prerequisites
+*.dep
+*.crf
+*.CRF
+*.[Cc][Rr][Ff]      # *.crf
+
+# Object files
+*.OBJ
+
+# Listing Files
+*.COD
+*.cod
+*.[Ii]
+*.LST
+*.lst
+*.MAP
+*.[Mm]51
+*.[Mm]66
+*.SCR
+*.scr
+
+# LINK output
+*.ABS
+
+# Libraries
+*.LIB
+
+
+# uv output
+*.lnp
+*.build_log.htm
+*.HEX
+
+
+# Build Files
+*._IA
+*.__[Ii]
+*._[Ii][Ii]
+
+# project
+*.uvgui.*
+*.uvguix.*
+EventRecorderStub.scvd
+
+###############################################################################
+### SlickEdit ###
+# SlickEdit workspace and project files are ignored by default because
+# typically they are considered to be developer-specific and not part of a
+# project.
+# *.vpw
+# *.vpj
+
+# SlickEdit workspace history and tag files always contain user-specific
+# data so they should not be stored in a repository.
+*.vpwhistu
+*.vpwhist
+*.vtg
+
+###############################################################################
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.gitignore.io/api/c,c++,keil,windows,slickedit
+
+###############################################################################
+###############################################################################
+
+/Components/Network/lwip/.gitattributes
+/Components/Network/lwip/.gitignore
+/Components/Network/lwip_contrib/.gitignore
+/Bsp/STM32/STM32F*/STCubeGenerated/MDK-ARM
+
+/_MDK_*/*
+/_MDK/Objects
+/_MDK/Listings
+/_MDK/JLinkSettings.ini
+/_MDK/JLinkLog.txt
+/_MDK/RTE/Device
+/_MDK/RTE/Device_*_bak
+
+/*.[Bb][Ii][Nn]
+/*.[Hh][Ee][Xx]
+!/[Pp][Ss][Ss]_*_[Vv]*.[Bb][Ii][Nn]
+!/[Pp][Ss][Ss]_*_[Vv]*.[Hh][Ee][Xx]
+

@@ -1,0 +1,192 @@
+/**********************************************************************************************************/
+/** @file     critical.h
+*** @author   zhaobing
+*** @version  V1.0.0
+*** @date     2018/11/5
+*** @brief    Critical Section and Atomic Operation support define.
+***********************************************************************************************************
+*** @par Last Commit:
+***      \$Author$ \n
+***      \$Date$ \n
+***      \$Rev$ \n
+***      \$URL$ \n
+***
+*** @par Change Logs:
+***      2017/5/5 -- zhaobing -- the first version, Only support ARM Cortex-M.
+***********************************************************************************************************/
+//lint -emacro(835, ATOMIC_SET32, ATOMIC_SET16, ATOMIC_SET8)    " A zero has been given as         "
+//lint -emacro(835, ATOMIC_CLR32, ATOMIC_CLR16, ATOMIC_CLR8)    "   right argument to operator '|' "
+//lint -emacro(835, ATOMIC_MDF32, ATOMIC_MDF16, ATOMIC_MDF8)
+//lint -emacro(835, ATOMIC_WR32,  ATOMIC_WR16,  ATOMIC_WR8)
+//lint -emacro(835, BIT_SET, BIT_CLR, BIT_MDF, BIT_READ, REG_READ, REG_WRITE)
+#ifdef _lint
+extern void __disable_irq(void);
+#undef __LDREXW
+#undef __STREXW
+#undef __LDREXH
+#undef __STREXH
+#undef __LDREXB
+#undef __STREXB
+//lint ++d"__LDREXW(ptr)        = ( *(ptr)           )"
+//lint ++d"__STREXW(value, ptr) = ( *(ptr) = (value) )"
+//lint ++d"__LDREXH(ptr)        = ( *(ptr)           )"
+//lint ++d"__STREXH(value, ptr) = ( *(ptr) = (value) )"
+//lint ++d"__LDREXB(ptr)        = ( *(ptr)           )"
+//lint ++d"__STREXB(value, ptr) = ( *(ptr) = (value) )"
+#endif
+
+#include "stdint.h"
+
+
+#if defined(__CORTEX_M)
+#define __CMSIS_CORTEX
+#define __CMSIS_CORTEX_M    __CORTEX_M
+#elif defined(__CORTEX_SC)
+#define __CMSIS_CORTEX
+#define __CMSIS_CORTEX_M    __CORTEX_SC
+#elif defined(__CORTEX_A)
+#define __CMSIS_CORTEX
+#define __CMSIS_CORTEX_A    __CORTEX_A
+#error "Processor platform Cortex-A not supported!"
+#else
+#error "Please include <Device>.h file, To append Processor platform!"
+#endif
+/**********************************************************************************************************/
+#ifndef __CRITICAL_H__
+#define __CRITICAL_H__
+#ifdef  __cplusplus
+extern  "C"
+{
+#endif
+/**********************************************************************************************************/
+/** @addtogroup Critical
+*** @{
+*** @addtogroup                 Critical_Exported_Macros
+*** @{
+***********************************************************************************************************/
+/*-------------------------------------- 临界区操作 ------------------------------------------------------*/
+#ifndef CRITICAL_SECTION_ALLOC
+#define CRITICAL_SECTION_ALLOC()    CPU_SR_ALLOC()          /* 定义临界区状态变量                   */
+#endif
+#ifndef CRITICAL_SECTION_ENTER
+#define CRITICAL_SECTION_ENTER()    CPU_CRITICAL_ENTER()    /* 临界区进入(一般为禁止中断)           */
+#endif
+#ifndef CRITICAL_SECTION_EXIT
+#define CRITICAL_SECTION_EXIT()     CPU_CRITICAL_EXIT()     /* 临界区退出(一般为恢复中断)           */
+#endif
+
+// #ifndef CPU_INTR_IS_ENABLE
+// #define CPU_INTR_IS_ENABLE()  ((__get_PRIMASK() & 0x1) == 0)/* (true)中断允许, (false)中断禁止      */
+// #endif
+#ifndef CPU_ISR_IS_ACTIVE
+#define CPU_ISR_IS_ACTIVE()   ( __get_IPSR() != 0U )        /* (true)正在执行ISR程序, (false)其它   */
+#endif
+#ifndef CPU_SR_ALLOC
+#define CPU_SR_ALLOC()        uint32_t  __cpu_sr            /* 定义 CPU状态寄存器变量               */
+#endif
+#ifndef CPU_CRITICAL_ENTER
+#define CPU_CRITICAL_ENTER()  ( __cpu_sr = __get_PRIMASK(), __disable_irq() )  /* 禁止 CPU中断      */
+#endif
+#ifndef CPU_CRITICAL_EXIT
+#define CPU_CRITICAL_EXIT()   ( __set_PRIMASK(__cpu_sr) )   /* 恢复 CPU中断允许状态                 */
+#endif
+
+
+/*-------------------------------------- 原子操作 --------------------------------------------------------*/
+/**
+ *  @brief      原子操作--变量指定位设置( var |= bits )
+ *  @param[in]  var   变量对象, 不能为常量
+ *  @param[in]  bits  Bit Mask
+ */
+#define ATOMIC_SET32(var, bits)         do{}while(__STREXW(__LDREXW(&(var)) | (bits), &(var)) != 0)
+#define ATOMIC_SET16(var, bits)         do{}while(__STREXH(__LDREXH(&(var)) | (bits), &(var)) != 0)
+#define ATOMIC_SET8( var, bits)         do{}while(__STREXB(__LDREXB(&(var)) | (bits), &(var)) != 0)
+
+/**
+ *  @brief      原子操作--变量指定位清零( var &= ~bits )
+ *  @param[in]  var   变量对象, 不能为常量
+ *  @param[in]  bits  Bit Mask
+ */
+#define ATOMIC_CLR32(var, bits)         do{}while(__STREXW(__LDREXW(&(var)) & ~(bits), &(var)) != 0)
+#define ATOMIC_CLR16(var, bits)         do{}while(__STREXH(__LDREXH(&(var)) & ~(bits), &(var)) != 0)
+#define ATOMIC_CLR8( var, bits)         do{}while(__STREXB(__LDREXB(&(var)) & ~(bits), &(var)) != 0)
+
+#define ATOMIC_CLR32_R(var, bits, ret)  do{(ret) = __LDREXW(&(var));}while(__STREXW((ret) & ~(bits), &(var)) != 0) 
+#define ATOMIC_CLR16_R(var, bits, ret)  do{(ret) = __LDREXH(&(var));}while(__STREXH((ret) & ~(bits), &(var)) != 0) 
+#define ATOMIC_CLR8_R( var, bits, ret)  do{(ret) = __LDREXB(&(var));}while(__STREXB((ret) & ~(bits), &(var)) != 0) 
+
+/**
+ *  @brief      原子操作--变量指定位修改( var = (var & ~clrs) | sets )
+ *  @param[in]  var   变量对象, 不能为常量
+ *  @param[in]  clrs  清零的Bit Mask
+ *  @param[in]  sets  设置的Bit Mask
+ */
+#define ATOMIC_MDF32(var, clrs, sets)   do{}while(__STREXW((__LDREXW(&(var)) & ~(clrs)) | (sets), &(var)) != 0)
+#define ATOMIC_MDF16(var, clrs, sets)   do{}while(__STREXH((__LDREXH(&(var)) & ~(clrs)) | (sets), &(var)) != 0)
+#define ATOMIC_MDF8( var, clrs, sets)   do{}while(__STREXB((__LDREXB(&(var)) & ~(clrs)) | (sets), &(var)) != 0)
+
+/**
+ *  @brief      原子操作--设置变量值( var = val )
+ *  @param[in]  var   变量对象, 不能为常量
+ *  @param[in]  val   写入的值
+ */
+#define ATOMIC_WR32(var, val)           do{__LDREXW(&(var));}while(__STREXW((val), &(var)) != 0)
+#define ATOMIC_WR16(var, val)           do{__LDREXH(&(var));}while(__STREXH((val), &(var)) != 0)
+#define ATOMIC_WR8( var, val)           do{__LDREXB(&(var));}while(__STREXB((val), &(var)) != 0)
+
+
+/*-------------------------------------- 寄存器操作 ------------------------------------------------------*/
+/**
+ *  @brief      寄存器指定位设置( reg |= bits )
+ *  @param[in]  reg   寄存器对象
+ *  @param[in]  bits  Bit Mask
+ */
+#define BIT_SET(reg, bits)          ( (reg) |= (bits) )
+
+/**
+ *  @brief      寄存器指定位清零( reg &= ~bits )
+ *  @param[in]  reg   寄存器对象
+ *  @param[in]  bits  Bit Mask
+ */
+#define BIT_CLR(reg, bits)          ( (reg) &= ~(bits) )
+
+/**
+ *  @brief      寄存器指定位修改( reg = (reg & ~clrs) | sets )
+ *  @param[in]  reg   寄存器对象
+ *  @param[in]  clrs  清零的Bit Mask
+ *  @param[in]  sets  设置的Bit Mask
+ */
+#define BIT_MDF(reg, clrs, sets)    ( (reg) = ((reg) & ~(clrs)) | (sets) )
+
+/**
+ *  @brief      寄存器位读
+ *  @param[in]  reg   寄存器对象
+ *  @param[in]  bits  Bit Mask
+ *  @return     ( reg & bits )
+ */
+#define BIT_READ(reg, bits)         ( (reg) & (bits) )
+
+/**
+ *  @brief      寄存器写( reg = val )
+ *  @param[in]  reg   寄存器对象
+ *  @param[in]  val   写入的值
+ */
+#define REG_WRITE(reg, val)         ( (reg) = (val) )
+
+/**
+ *  @brief      寄存器读
+ *  @param[in]  reg   寄存器对象
+ *  @return     ( reg )
+ */
+#define REG_READ(reg)               ( (reg) )
+
+
+/*****************************  END OF FILE  **************************************************************/
+#ifdef  __cplusplus
+}
+#endif
+#endif
+/** @}
+*** @}
+***********************************************************************************************************/
+
