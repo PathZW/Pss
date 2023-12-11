@@ -1,0 +1,10 @@
+/.[Bb][Aa][Cc][Kk]
+/.[Bb][Aa][Kk]
+
+!/image/*.[Ff][Ss]
+!/image/*.[Hh][Ee][Xx]
+!/image/*.[Bb][Ii][Nn]
+
+!*.[Ss][Hh]
+!*.[Cc][Mm][Dd]
+!*.exe
