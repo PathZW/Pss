@@ -24,4 +24,4 @@ git clone $remoteuser@$remotepath/Platform.git Platform
 cd ./Platform/
 git checkout dev
 
-read -p "Press any key to continue" -t 5
+read -p "Press any key to continue" -t 15
