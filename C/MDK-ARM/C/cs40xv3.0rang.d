@@ -1,0 +1,13 @@
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Rang.c
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Rang.h
+c\cs40xv3.0rang.o: F:\SoftWareInstallFile\Keil5.34\ARM\ARMCC\Bin\..\include\stdio.h
+c\cs40xv3.0rang.o: F:\SoftWareInstallFile\Keil5.34\ARM\ARMCC\Bin\..\include\stdint.h
+c\cs40xv3.0rang.o: F:\SoftWareInstallFile\Keil5.34\ARM\ARMCC\Bin\..\include\stdbool.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0AnlgDev.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Comm.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Rang.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Source.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Sens.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0Sweeps.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0System.h
+c\cs40xv3.0rang.o: ..\User\CS40xV3.0trig.h
